@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, Calendar, Clock, TrendingUp } from "lucide-react";
-import podcastCover from "@/assets/hat-logo.jpg";
+import podcastCover from "@/assets/hat-logo.png";
 
 const Episodes = () => {
   const episodes = [

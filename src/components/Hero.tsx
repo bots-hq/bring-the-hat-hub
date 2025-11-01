@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, Sparkles, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/podcast-hero-new.jpg";
-import hatLogo from "@/assets/hat-logo.jpg";
+import hatLogo from "@/assets/hat-logo.png";
 
 const Hero = () => {
   return (
