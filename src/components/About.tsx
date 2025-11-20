@@ -1,99 +1,94 @@
-import { Mic, Users, Sparkles, Zap } from "lucide-react";
+import { Mic2, Users, Sparkles, Target } from "lucide-react";
 
 const About = () => {
   const features = [
     {
-      icon: Mic,
-      title: "Authentic Voices",
-      description: "Real conversations with visionaries, creators, and thought leaders shaping our world",
-      color: "from-secondary to-secondary/70"
-    },
-    {
-      icon: Zap,
-      title: "Bold Topics",
-      description: "We tackle the subjects others avoid, diving deep into what truly matters",
-      color: "from-accent to-accent/70"
+      icon: Mic2,
+      title: "Unfiltered Voices",
+      description: "Real conversations without the script. We dive deep into topics that matter."
     },
     {
       icon: Users,
-      title: "Community First",
-      description: "Listener-driven content that reflects the questions you actually want answered",
-      color: "from-secondary to-accent"
+      title: "Diverse Perspectives",
+      description: "Guests from all walks of life sharing their unique insights and experiences."
     },
     {
       icon: Sparkles,
-      title: "Fresh Angles",
-      description: "Unique perspectives that challenge conventional wisdom and inspire new thinking",
-      color: "from-accent to-secondary"
+      title: "Bold Ideas",
+      description: "Exploring unconventional thoughts and challenging the status quo."
+    },
+    {
+      icon: Target,
+      title: "Authentic Stories",
+      description: "No filters, no pretense—just honest storytelling at its finest."
     }
   ];
 
   return (
-    <section className="py-32 bg-background relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-
+    <section className="py-32 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--primary)/0.1),transparent_50%),radial-gradient(circle_at_70%_50%,hsl(var(--secondary)/0.1),transparent_50%)]" />
+      
       <div className="container px-4 md:px-6 relative z-10">
-        {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-full px-5 py-2.5 mb-6">
-            <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" />
-            <span className="text-sm font-semibold text-secondary tracking-wide">WHAT WE'RE ABOUT</span>
+        <div className="max-w-5xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-5xl md:text-7xl font-black tracking-tight mb-6">
+              About the Show
+            </h2>
+            <div className="w-24 h-2 bg-gradient-to-r from-primary via-secondary to-accent rounded-full mx-auto mb-8" />
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              <span className="font-bold text-primary">Bring the Hat</span> is a podcast that brings you 
+              raw, authentic conversations with fascinating people. We explore ideas, share stories, 
+              and challenge perspectives—one episode at a time.
+            </p>
           </div>
-          
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-            Beyond the Ordinary
-          </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Bring the Hat isn't just another podcast—it's a movement. We're building a space where 
-            <span className="text-secondary font-semibold"> bold ideas meet authentic storytelling</span>, 
-            creating conversations that stick with you long after you hit pause.
-          </p>
-        </div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="group relative animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Card */}
-              <div className="relative h-full bg-gradient-to-br from-card to-card/50 backdrop-blur-sm rounded-3xl p-8 border border-border hover:border-secondary/50 transition-all duration-500 hover:shadow-[var(--shadow-premium)] overflow-hidden">
-                {/* Gradient Glow on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                
-                {/* Icon */}
-                <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
-                  <feature.icon className="w-8 h-8 text-white" />
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div 
+                  key={index}
+                  className="group relative animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative bg-card border-2 border-border rounded-3xl p-8 hover:border-primary/50 transition-all duration-500 h-full">
+                    <div className="flex items-start gap-6">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                          <Icon className="w-8 h-8 text-white" />
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h3 className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">
+                          {feature.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                
-                {/* Content */}
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-secondary transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
+              );
+            })}
+          </div>
 
-                {/* Decorative Corner */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-secondary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
+          {/* Bottom CTA */}
+          <div className="text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="inline-block bg-gradient-to-r from-card to-card/50 border-2 border-border rounded-3xl p-10">
+              <p className="text-xl text-muted-foreground mb-4">
+                Powered by
+              </p>
+              <p className="text-3xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                owif productions
+              </p>
             </div>
-          ))}
-        </div>
-
-        {/* Bottom CTA Section */}
-        <div className="mt-20 text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <div className="inline-block bg-gradient-to-r from-secondary/10 via-accent/10 to-secondary/10 rounded-2xl p-8 border border-secondary/20">
-            <p className="text-lg text-muted-foreground mb-2">
-              Powered by creativity. Driven by passion.
-            </p>
-            <p className="text-2xl font-bold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-              owif productions
-            </p>
           </div>
         </div>
       </div>
