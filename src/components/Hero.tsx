@@ -34,10 +34,15 @@ const Hero = () => {
 
           {/* Main Title */}
           <div className="text-center space-y-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-6 py-3">
+            <a 
+              href="https://www.youtube.com/watch?v=X5sc50hPa0Q&feature=youtu.be"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-6 py-3 hover:bg-primary/20 transition-colors"
+            >
               <Radio className="w-5 h-5 text-primary animate-pulse" />
               <span className="text-sm font-bold text-primary tracking-wider uppercase">Now Broadcasting</span>
-            </div>
+            </a>
             
             <h1 className="text-7xl md:text-9xl font-black tracking-tighter">
               <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
@@ -55,25 +60,39 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="group bg-gradient-to-r from-primary to-primary/90 hover:shadow-[var(--shadow-glow)] border-0 px-10 h-16 text-xl font-bold"
+                asChild
               >
-                <Play className="w-7 h-7 transition-transform group-hover:scale-110 fill-white mr-2" />
-                Watch First Episode
+                <a 
+                  href="https://www.youtube.com/watch?v=X5sc50hPa0Q&feature=youtu.be"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Play className="w-7 h-7 transition-transform group-hover:scale-110 fill-white mr-2" />
+                  Watch First Episode
+                </a>
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 className="border-2 border-primary/40 hover:bg-primary/10 hover:border-primary h-16 px-10 text-xl font-semibold"
+                asChild
               >
-                <Calendar className="w-6 h-6 mr-2" />
-                Subscribe
+                <a 
+                  href="https://www.youtube.com/watch?v=X5sc50hPa0Q&feature=youtu.be"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Calendar className="w-6 h-6 mr-2" />
+                  Subscribe
+                </a>
               </Button>
             </div>
 
             {/* Stats */}
             <div className="flex flex-wrap items-center justify-center gap-12 pt-12 text-muted-foreground">
               <div className="text-center">
-                <div className="text-4xl font-black text-primary mb-1">01</div>
-                <div className="text-sm uppercase tracking-wider">Episode</div>
+                <div className="text-4xl font-black text-primary mb-1">04</div>
+                <div className="text-sm uppercase tracking-wider">Episodes</div>
               </div>
               <div className="w-px h-12 bg-border" />
               <div className="text-center">
