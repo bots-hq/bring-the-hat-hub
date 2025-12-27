@@ -22,11 +22,11 @@ const Hero = () => {
           <div className="flex justify-center mb-12 animate-fade-in">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
-              <div className="relative bg-card/80 backdrop-blur-xl rounded-3xl p-8 border-2 border-border shadow-2xl">
+              <div className="relative">
                 <img 
                   src={hatLogo} 
                   alt="Bring the Hat Logo"
-                  className="w-32 h-32 md:w-40 md:h-40 object-contain"
+                  className="w-40 h-40 md:w-52 md:h-52 object-contain"
                 />
               </div>
             </div>
