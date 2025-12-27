@@ -81,14 +81,19 @@ const About = () => {
 
           {/* Bottom CTA */}
           <div className="text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="inline-block bg-gradient-to-r from-card to-card/50 border-2 border-border rounded-3xl p-10">
+            <a 
+              href="https://x.com/originalwifhat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-card to-card/50 border-2 border-border rounded-3xl p-10 hover:border-primary/50 transition-colors"
+            >
               <p className="text-xl text-muted-foreground mb-4">
                 Powered by
               </p>
               <p className="text-3xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 owif productions
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </div>

@@ -1,11 +1,25 @@
-import { Youtube, Twitter, Instagram, Mail } from "lucide-react";
+import { Youtube, Instagram, Mail, Globe, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Youtube, href: "https://www.youtube.com/@bringthehat", label: "YouTube" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Mail, href: "mailto:contact@bringthehat.com", label: "Email" }
+    { icon: Youtube, href: "https://www.youtube.com/watch?v=X5sc50hPa0Q&feature=youtu.be", label: "YouTube" },
+    { icon: () => (
+      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    ), href: "https://x.com/originalwifhat", label: "X (Twitter)" },
+    { icon: Instagram, href: "https://www.instagram.com/bringthehatpodcast?igsh=MTlobHV0MjR3d2xrYQ==", label: "Instagram" },
+    { icon: MessageCircle, href: "https://t.me/OWIFTHELASTHAT", label: "Telegram" },
+    { icon: Globe, href: "https://owif.fun", label: "Website" }
+  ];
+
+  const quickLinks = [
+    { name: "Episodes", href: "#episodes" },
+    { name: "About", href: "#about" },
+    { name: "Subscribe", href: "#subscribe" },
+    { name: "Roadmap", href: "https://owif-roadmap.vercel.app", external: true },
+    { name: "Dexscreener", href: "https://dexscreener.com/solana/G5qfsAj", external: true },
+    { name: "X Community", href: "https://x.com/i/communities/", external: true }
   ];
 
   return (
@@ -26,39 +40,39 @@ const Footer = () => {
               <p className="text-muted-foreground leading-relaxed">
                 Unfiltered conversations, bold ideas, and authentic voices. A podcast by owif productions.
               </p>
+              <a 
+                href="https://www.instagram.com/p/Br1-USanlm7/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Achi's (WIF) Instagram: @ma_babezz
+              </a>
             </div>
 
             {/* Quick Links */}
             <div className="space-y-4">
               <h4 className="text-lg font-bold text-foreground">Quick Links</h4>
               <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                    Episodes
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                    Subscribe
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                    Contact
-                  </a>
-                </li>
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <a 
+                      href={link.href} 
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* Social */}
             <div className="space-y-4">
               <h4 className="text-lg font-bold text-foreground">Connect With Us</h4>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
                   return (
@@ -75,6 +89,16 @@ const Footer = () => {
                   );
                 })}
               </div>
+              <div className="pt-4 space-y-2">
+                <a 
+                  href="https://www.facebook.com/share/1HU54HSnux/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors block"
+                >
+                  Facebook
+                </a>
+              </div>
             </div>
           </div>
 
@@ -86,9 +110,14 @@ const Footer = () => {
             <p>
               © {new Date().getFullYear()} <span className="font-semibold text-primary">Bring the Hat</span>. All rights reserved.
             </p>
-            <p>
+            <a 
+              href="https://x.com/originalwifhat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
               Powered by <span className="font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">owif productions</span>
-            </p>
+            </a>
           </div>
         </div>
       </div>
