@@ -38,9 +38,7 @@ const About = () => {
             </h2>
             <div className="w-24 h-2 bg-gradient-to-r from-primary via-secondary to-accent rounded-full mx-auto mb-8" />
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              <span className="font-bold text-primary">Bring the Hat</span> is a podcast that brings you 
-              raw, authentic conversations with fascinating people. We explore ideas, share stories, 
-              and challenge perspectives—one episode at a time.
+              <span className="font-bold text-primary">Bring the Hat</span> is a podcast anchored and hosted by Pro 🏈/NFL Agent Coach Bruno & KingMax on a mission to help young men find hope & direction in life through inspiring conversations with people who came, saw and conquered.
             </p>
           </div>
 
