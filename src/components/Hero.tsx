@@ -26,7 +26,7 @@ const Hero = () => {
                 <img 
                   src={hatLogo} 
                   alt="Bring the Hat Logo"
-                  className="w-40 h-40 md:w-52 md:h-52 object-contain"
+                  className="w-40 h-40 md:w-52 md:h-52 object-contain rounded-3xl"
                 />
               </div>
             </div>
